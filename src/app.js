@@ -19,7 +19,7 @@ import swaggerUiExpress from 'swagger-ui-express'
 
 const app = express();
 const PORT = config.app.PORT
-const connection = mongoose.connect(config.mongo.URL)
+mongoose.connect(config.mongo.URL)
 
 /**
  * Swagger config
@@ -76,4 +76,4 @@ app.use('/loggerTest', (req, res) => {
 
 
 
-const server = app.listen(PORT,()=> logger.info(`Listening on PORT ${PORT}`));
+app.listen(PORT,()=> logger.info(`Listening on PORT ${PORT}`));
