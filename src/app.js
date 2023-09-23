@@ -42,16 +42,16 @@ const spec = swaggerJsdoc(swaggerOptions)
 /**
  * Template engine
  */
-app.engine('handlebars',handlebars.engine());
-app.set('views',__dirname+'/views');
-app.set('view engine','handlebars');
+app.engine('handlebars',handlebars.engine())
+app.set('views',__dirname+'/views')
+app.set('view engine','handlebars')
 
 /**
  * Middlewares
  */
 app.use(express.static(__dirname+'/public'))
 app.use(express.json());
-app.use(express.urlencoded({extended:true}));
+app.use(express.urlencoded({extended:true}))
 
 initializePassport();
 app.use(passport.initialize());
@@ -76,4 +76,4 @@ app.use('/loggerTest', (req, res) => {
 
 
 
-app.listen(PORT,()=> logger.info(`Listening on PORT ${PORT}`));
+app.listen(PORT,()=> logger.info(`Listening on PORT ${PORT}`))
