@@ -19,7 +19,7 @@ import swaggerUiExpress from 'swagger-ui-express'
 
 const app = express();
 const PORT = config.app.PORT
-mongoose.connect(config.mongo.URL)
+mongoose.connect(process.env.MONGO_URL)
 
 /**
  * Swagger config
